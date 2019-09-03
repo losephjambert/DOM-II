@@ -5,6 +5,7 @@ const navLinks = document.querySelectorAll('header nav a');
 const body = document.querySelector('body');
 const h2 = document.querySelectorAll('h2');
 const buttons = document.querySelectorAll('.btn');
+const paragraphs = document.querySelectorAll('p');
 
 const randomInt = (min, max) => Math.floor(Math.random() * max) + min;
 
@@ -54,5 +55,26 @@ navLinks.forEach(link => {
   link.addEventListener('dblclick', e => {
     e.preventDefault();
     TweenMax.to(link, 1, { opacity: 0.5, rotation: 45 });
+  });
+});
+
+// 7. copy
+const getSelectionText = () => {
+  let text = '';
+  if (window.getSelection) {
+    text = window.getSelection().toString();
+  } else if (document.selection && document.selection.type != 'Control') {
+    text = document.selection.createRange().text;
+  }
+  return text;
+};
+paragraphs.forEach(p => {
+  p.addEventListener('copy', e => {
+    console.log(e.target);
+    const text = getSelectionText();
+    window.alert(
+      `you copied this text:
+      ${text}`
+    );
   });
 });
