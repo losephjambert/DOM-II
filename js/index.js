@@ -107,14 +107,22 @@ window.addEventListener('mousemove', e => {
 });
 
 // Nested events
-buttons[0].addEventListener('click', e => {
-  e.preventDefault();
-  buttons[1].style.opacity = 0;
-});
-buttons[2].addEventListener('click', e => {
-  e.preventDefault();
-  buttons[0].style.opacity = 0;
-});
+buttons[0].addEventListener(
+  'click',
+  e => {
+    e.stopPropagation();
+    buttons[1].style.opacity = 0;
+  },
+  false
+);
+buttons[2].addEventListener(
+  'click',
+  e => {
+    e.stopPropagation();
+    buttons[0].style.opacity = 0;
+  },
+  false
+);
 
 // prevent nav items from refreshing the page
 navLinks.forEach(link => link.addEventListener('click', e => e.preventDefault()));
