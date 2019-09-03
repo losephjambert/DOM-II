@@ -78,3 +78,17 @@ paragraphs.forEach(p => {
     );
   });
 });
+
+// 8. keyup
+document.addEventListener('keyup', e => {
+  if (e.keyCode === 67) {
+    paragraphs.forEach(p => (p.style.color = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`));
+  }
+});
+
+// 9. keypress
+document.addEventListener('keypress', e => {
+  if (e.keyCode === 66) {
+    paragraphs.forEach(p => (p.style.backgroundColor = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`));
+  }
+});
