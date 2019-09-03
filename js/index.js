@@ -107,21 +107,20 @@ window.addEventListener('mousemove', e => {
 });
 
 // Nested events
-buttons[0].addEventListener(
-  'click',
-  e => {
+const contentPickDestination = document.querySelector('.content-pick .destination');
+const contentPickDestinationP = document.querySelectorAll('.content-pick .destination > p');
+contentPickDestination.addEventListener('click', e => {
+  window.alert(e.target.tagName);
+});
+buttons[0].addEventListener('click', e => {
+  e.stopPropagation();
+});
+
+contentPickDestinationP.forEach(p =>
+  p.addEventListener('click', e => {
+    console.log('clicked the p');
     e.stopPropagation();
-    buttons[1].style.opacity = 0;
-  },
-  false
-);
-buttons[2].addEventListener(
-  'click',
-  e => {
-    e.stopPropagation();
-    buttons[0].style.opacity = 0;
-  },
-  false
+  })
 );
 
 // prevent nav items from refreshing the page
