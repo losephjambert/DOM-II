@@ -92,3 +92,15 @@ document.addEventListener('keypress', e => {
     paragraphs.forEach(p => (p.style.backgroundColor = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`));
   }
 });
+
+// 10.
+document.addEventListener('DOMContentLoaded', e => {
+  window.alert('The DOM has loaded');
+});
+
+// 10.
+body.addEventListener('mousemove', e => {
+  let x = e.pageX;
+  let y = e.pageY;
+  body.style.transform = `rotate3d(1,1,1,${(x / y) * 2}deg)`;
+});
