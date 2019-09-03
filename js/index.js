@@ -48,3 +48,11 @@ buttons.forEach(button => {
 window.addEventListener('resize', e => {
   body.style.backgroundColor = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 });
+
+// 6. double-click
+navLinks.forEach(link => {
+  link.addEventListener('dblclick', e => {
+    e.preventDefault();
+    TweenMax.to(link, 1, { opacity: 0.5, rotation: 45 });
+  });
+});
