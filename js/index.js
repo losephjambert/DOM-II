@@ -88,7 +88,7 @@ document.addEventListener('keyup', e => {
 
 // 9. keypress
 document.addEventListener('keypress', e => {
-  if (e.keyCode === 66) {
+  if (e.keyCode === 32) {
     paragraphs.forEach(p => (p.style.backgroundColor = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`));
   }
 });
