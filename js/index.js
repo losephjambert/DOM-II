@@ -6,6 +6,7 @@ const body = document.querySelector('body');
 const h2 = document.querySelectorAll('h2');
 const buttons = document.querySelectorAll('.btn');
 const paragraphs = document.querySelectorAll('p');
+const images = document.querySelectorAll('img');
 
 const randomInt = (min, max) => Math.floor(Math.random() * max) + min;
 
@@ -99,8 +100,9 @@ document.addEventListener('DOMContentLoaded', e => {
 });
 
 // 11.
-body.addEventListener('mousemove', e => {
-  let x = e.pageX;
-  let y = e.pageY;
-  body.style.transform = `rotate3d(1,1,1,${(x / y) * 2}deg)`;
+window.addEventListener('mousemove', e => {
+  let x = e.x;
+  let y = e.y;
+  console.log(e);
+  images.forEach(image => (image.style.transform = `rotate3d(1,1,1,${x * (y / 100)}deg)`));
 });
