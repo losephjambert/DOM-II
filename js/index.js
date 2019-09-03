@@ -103,6 +103,18 @@ document.addEventListener('DOMContentLoaded', e => {
 window.addEventListener('mousemove', e => {
   let x = e.x;
   let y = e.y;
-  console.log(e);
   images.forEach(image => (image.style.transform = `rotate3d(1,1,1,${x * (y / 100)}deg)`));
 });
+
+// Nested events
+buttons[0].addEventListener('click', e => {
+  e.preventDefault();
+  buttons[1].style.opacity = 0;
+});
+buttons[2].addEventListener('click', e => {
+  e.preventDefault();
+  buttons[0].style.opacity = 0;
+});
+
+// prevent nav items from refreshing the page
+navLinks.forEach(link => link.addEventListener('click', e => e.preventDefault()));
