@@ -15,7 +15,7 @@ body.style.opacity = 1;
 window.addEventListener('scroll', e => {
   let currentY = window.pageYOffset || document.documentElement.scrollTop;
   if (currentY > lastSeenY) {
-    body.style.opacity -= 0.01;
+    body.style.opacity -= 0.003;
   } else {
     body.style.opacity += 0.01;
   }
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', e => {
   window.alert('The DOM has loaded');
 });
 
-// 10.
+// 11.
 body.addEventListener('mousemove', e => {
   let x = e.pageX;
   let y = e.pageY;
