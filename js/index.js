@@ -6,6 +6,8 @@ const body = document.querySelector('body');
 const h2 = document.querySelectorAll('h2');
 const buttons = document.querySelectorAll('.btn');
 
+const randomInt = (min, max) => Math.floor(Math.random() * max) + min;
+
 // 1. scroll
 let lastSeenY = 0;
 body.style.opacity = 1;
@@ -43,3 +45,6 @@ buttons.forEach(button => {
 });
 
 // 5. resize
+window.addEventListener('resize', e => {
+  body.style.backgroundColor = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+});
